@@ -1,0 +1,24 @@
+/* Базовые стили дрила (перенесено из дочерней темы) */
+.dd-holder { position: relative; overflow: hidden; }
+.dd-nav-track { position: relative; display:flex; gap:0!important; transition: transform .22s ease; will-change: transform; transform: translateZ(0); }
+.dd-nav-panel { flex:0 0 auto; min-width:0!important; max-width:none!important; box-sizing:border-box; overflow:hidden; -webkit-overflow-scrolling:touch; overscroll-behavior:contain; contain:layout paint; backface-visibility:hidden; scrollbar-gutter: stable both-edges; margin:0!important; border:0; }
+.dd-panel-scroll{ overflow-y:auto; -webkit-overflow-scrolling:touch; overscroll-behavior:contain; }
+.dd-scroll{ overflow-y:auto; -webkit-overflow-scrolling:touch; overscroll-behavior:contain; touch-action:pan-y; max-height: calc(100dvh - var(--dd-header-h, 56px) - 8px); padding-bottom: max(20px, env(safe-area-inset-bottom)); }
+.dd-nav-header{ position:sticky; top:0; z-index:1; display:flex; align-items:center; gap:.5rem; padding:.75rem 1rem; background: var(--ast-global-color-0, #f7f7f7); border-bottom: 1px solid rgba(0,0,0,.06); font-weight:600; letter-spacing:.2px; }
+.dd-back-btn{ display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:999px; border:none; background:#fff; cursor:pointer; position:absolute; left:12px; }
+.dd-back-btn svg { position: absolute; }
+.dd-nav-header>div, .dd-nav-header > .dd-header-link{ margin:auto; }
+.dd-nav-list{ list-style:none; margin:0; padding:.25rem 0; overflow:hidden; }
+.dd-nav-list>li{ border-bottom:1px solid rgba(0,0,0,.06); }
+.dd-nav-link{ display:flex; align-items:center; justify-content:space-between; gap:.75rem; padding:.5rem 1rem; text-decoration:none; color:inherit; }
+.dd-nav-link .dd-label{ display:inline-flex; align-items:center; gap:.5rem; max-width:100%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; flex:1 1 auto; }
+.dd-next-icon{ opacity:.65; display:inline-flex; width:20px; height:20px; }
+
+/* Samsung/Android: исключаем непредвиденные зазоры/обтекания */
+.dd-nav-track, .dd-nav-panel, .dd-nav-list, .dd-nav-list>li, .dd-nav-link, .dd-label { min-width:0!important; }
+
+/* Отключаем стандартные раскрытия Astra внутри мобильного меню */
+body.ast-header-break-point .ast-mobile-popup-drawer .main-header-menu .sub-menu { display:none!important; }
+body.ast-header-break-point .ast-mobile-popup-drawer .ast-menu-toggle { display:none!important; }
+/* Контейнер Astra — контроль жестов */
+.ast-mobile-popup-drawer, .ast-mobile-popup-drawer .ast-mobile-popup-inner { touch-action:pan-y; overscroll-behavior:contain; }
