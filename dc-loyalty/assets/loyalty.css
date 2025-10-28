@@ -1,0 +1,82 @@
+.dc-loyalty { max-width: 780px; }
+.dc-loyalty__title { margin: 0 0 12px; }
+.dc-loyalty__subtitle { margin: 20px 0 8px; }
+
+.dc-loyalty__kpis {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 16px 0;
+}
+.dc-loyalty__kpi {
+  background: #f7f7f7;
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.dc-loyalty__progress {
+  background: #eaeaea;
+  border-radius: 999px;
+  height: 14px;
+  overflow: hidden;
+}
+.dc-loyalty__progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #4caf50;
+  position: relative;
+}
+
+/* Маркеры уровней под прогресс-баром */
+.dc-loyalty__progress-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+  font-size: 16px;
+  color: #666;
+}
+.dc-loyalty__progress-labels .label {
+  opacity: .6;
+}
+.dc-loyalty__progress-labels .label.active {
+  color: #d94478;
+  opacity: 1;
+}
+
+/* Значение прогресса внутри заполненной части */
+.dc-loyalty__progress-val {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+/* Текущее значение скидки рядом с подписями KPI */
+.dc-loyalty__current-discount {
+  color: #d94478;
+  font-weight: 600;
+}
+
+.dc-loyalty__muted {
+  color: #666;
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+.dc-loyalty__levels { margin: 8px 0 0 18px; }
+
+/* Иконка процента для вкладки "Накопичувальна знижка" в моем аккаунте */
+.woocommerce-MyAccount-navigation
+  .woocommerce-MyAccount-navigation-link--loyalty > a::before {
+  content: "%";
+  font-weight: 700;
+}
+.woocommerce-MyAccount-navigation-link--loyalty svg {
+  display: none;
+}
+@media (max-width: 600px) {
+  .dc-loyalty__kpis { grid-template-columns: 1fr; }
+}
